@@ -28,11 +28,10 @@ all_tokens = [token for doc in documents for token in doc]
 token_counts = Counter(all_tokens)
 
 themes = {
-    "Sound as Artefact": ["valley", "hymns", "recitals", "historical", "craft"],
-    "Sound as Art": ["performances", "concerts", "artistic", "expression", "creativity"],
+    "Sound as Art": ["performances", "concerts", "artistic", "hymns", "recitals"],
+    "Sound as Crowd Curation": ["collective", "hands-on", "therapy", "exchanges", "gathering"],
     "Sound as Lecturing": ["guided", "narratives", "awareness", "knowledge", "education"],
     "Sound as Ambiance/Soundtrack": ["environments", "soundtrack", "soothing", "peaceful", "relaxing"],
-    "Sound as Crowd Curation": ["collective", "hands-on", "therapy", "exchanges", "gathering"],
 }
 
 theme_frequencies = {}
@@ -63,8 +62,7 @@ fig = px.bar(df,
              title='<b>Top 5 Keywords for Each Sound Theme</b>',
              labels={'Keyword': 'Word', 'Frequency': 'Frequency', 'Theme': 'Theme'},
              text='Frequency',
-             category_orders={'<b>Theme<b>': ["Sound as Artefact", "Sound as Art", 
-                                        "Sound as Lecturing", "Sound as Ambiance/Soundtrack", 
+             category_orders={'<b>Theme<b>': ["Sound as Art", "Sound as Lecturing", "Sound as Ambiance/Soundtrack",
                                         "Sound as Crowd Curation"]})
 
 fig.update_layout(
